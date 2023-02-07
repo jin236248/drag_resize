@@ -13,18 +13,26 @@ Keyword arguments:
 
 - dragGrid (dict; optional)
 
+- height (number; optional)
+
 - position (dict; optional)
 
 - resizeGrid (dict; optional)
 
-- size (dict; optional)"""
+- size (dict; optional)
+
+- width (number; optional)
+
+- x (number; optional)
+
+- y (number; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, setState=Component.UNDEFINED, onDragStop=Component.UNDEFINED, onResizeStop=Component.UNDEFINED, size=Component.UNDEFINED, position=Component.UNDEFINED, dragGrid=Component.UNDEFINED, resizeGrid=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'dragGrid', 'position', 'resizeGrid', 'size']
+    def __init__(self, id=Component.UNDEFINED, x=Component.UNDEFINED, y=Component.UNDEFINED, width=Component.UNDEFINED, height=Component.UNDEFINED, onDragStop=Component.UNDEFINED, onResizeStop=Component.UNDEFINED, size=Component.UNDEFINED, position=Component.UNDEFINED, dragGrid=Component.UNDEFINED, resizeGrid=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'dragGrid', 'height', 'position', 'resizeGrid', 'size', 'width', 'x', 'y']
         self._type = 'DragResize'
         self._namespace = 'drag_resize'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'dragGrid', 'position', 'resizeGrid', 'size']
+        self.available_properties = ['id', 'dragGrid', 'height', 'position', 'resizeGrid', 'size', 'width', 'x', 'y']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

@@ -3,21 +3,22 @@ import PropTypes from 'prop-types';
 import Rnd from 'react-rnd';
 
 export default class DragResize extends Component {
-    constructor(state) {
-        super(state);
+    constructor(props) {
+        super(props);
+        this.state = {};
         this.onDragStop = this.onDragStop.bind(this);
         this.onResizeStop = this.onResizeStop.bind(this);
     }
 
     onDragStop(e, d) { 
-        this.setState({ 
+        this.props.setProps({ 
             x: d.x, 
             y: d.y, 
         }) 
     }
     
     onResizeStop(e, direction, ref, delta, position) {
-        this.setState({
+        this.props.setProps({
             width: ref.style.width,
             height: ref.style.height,
         })
@@ -27,20 +28,20 @@ export default class DragResize extends Component {
         const {id, label, setProps, value} = this.props;
 
         return (
-            <div id={this.state.id}>
+            <div id={this.props.id}>
                 <Rnd
-                    size={{ width: this.state.width,  height: this.state.height }}
-                    position={{ x: this.state.x, y: this.state.y }}
-                    onDragStop={(e, d) => { this.setState({ x: d.x, y: d.y }) }}
+                    size={{ width: this.props.width,  height: this.props.height }}
+                    position={{ x: this.props.x, y: this.props.y }}
+                    onDragStop={(e, d) => { this.props.setProps({ x: d.x, y: d.y }) }}
                     onResizeStop={(e, direction, ref, delta, position) => {
-                        this.setState({
-                            width: ref.offsetWidth,
-                            height: ref.offsetHeight,
+                        this.props.setProps({
+                            width: ref.style.width,
+                            height: ref.style.height,
                         });
                     }}
                     >
                     <div>
-                        {this.state.children}
+                        {this.props.children}
                     </div>
                 </Rnd>
             </div>
@@ -56,7 +57,11 @@ DragResize.propTypes = {
     // value: PropTypes.string,
     // setProps: PropTypes.func
     id: PropTypes.string,
-    setState: PropTypes.func,
+    x: PropTypes.number,
+    y: PropTypes.number,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    setProps: PropTypes.func,
     onDragStop: PropTypes.func,
     onResizeStop: PropTypes.func,
     size: PropTypes.object,
