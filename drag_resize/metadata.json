@@ -10,6 +10,13 @@
         },
         "required": false,
         "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
       }
     }
   }

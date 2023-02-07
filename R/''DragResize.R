@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-''DragResize <- function(id=NULL) {
+''DragResize <- function(children=NULL, id=NULL) {
     
-    props <- list(id=id)
+    props <- list(children=children, id=id)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@
         props = props,
         type = 'DragResize',
         namespace = 'drag_resize',
-        propNames = c('id'),
+        propNames = c('children', 'id'),
         package = 'dragResize'
         )
 

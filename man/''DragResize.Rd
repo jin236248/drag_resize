@@ -10,10 +10,12 @@
 }
 
 \usage{
-''DragResize(id=NULL)
+''DragResize(children=NULL, id=NULL)
 }
 
 \arguments{
+\item{children}{Named list. }
+
 \item{id}{Character. }
 }
 

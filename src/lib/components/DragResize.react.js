@@ -28,22 +28,24 @@ export default class DragResize extends Component {
         // const {id, label, setProps, value} = this.props;
 
         return (
-            // <div id={this.props.id}>
-            <div>
-                <Rnd
-                    default={{
-                        x: 0,
-                        y: 0,
-                        width: 320,
-                        height: 200,
-                    }}
-                    >
+            <div id={this.props.id}>
+            <Rnd
+                default={{
+                    x: 0,
+                    y: 0,
+                    width: 450,
+                    height: 300,
+                }}
+                >
+                <div
+                    className="box"
+                    style={{ height: '100%', border: '5px solid rgba(0, 0, 0, 0.5)' }}
+                >
                     <div>
-                        <figure className="image is-64x64">
-                            <img src="https://avatars1.githubusercontent.com/u/10220449?v=3&s=460" draggable="false" alt="github avatar" />
-                        </figure>
+                        {this.props.children}
                     </div>
-                </Rnd>
+                </div>
+            </Rnd>
             </div>
         );
     }
@@ -53,6 +55,7 @@ DragResize.defaultProps = {};
 
 DragResize.propTypes = {
     id: PropTypes.string,
+    children: PropTypes.object,
     // label: PropTypes.string.isRequired,
     // value: PropTypes.string,
     // setProps: PropTypes.func
