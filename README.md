@@ -1,6 +1,7 @@
 # drag_resize
 
-drag_resize is a Dash component library.
+drag_resize is a Dash component library based on react-rnd package.
+(https://www.npmjs.com/package/react-rnd)
 
 Get started with:
 1. Install Dash and its dependencies: https://dash.plotly.com/installation

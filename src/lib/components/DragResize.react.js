@@ -6,23 +6,23 @@ export default class DragResize extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        // this.onDragStop = this.onDragStop.bind(this);
-        // this.onResizeStop = this.onResizeStop.bind(this);
+        this.handleOnDragStop = this.handleOnDragStop.bind(this);
+        this.handleOnResizeStop = this.handleOnResizeStop.bind(this);
     }
     
-    // onDragStop(e, d) { 
-    //     this.props.setProps({ 
-    //         x: d.x, 
-    //         y: d.y, 
-    //     }) 
-    // }
+    handleOnDragStop(e, d) { 
+        this.props.setProps({ 
+            x: d.x, 
+            y: d.y, 
+        }) 
+    }
     
-    // onResizeStop(e, direction, ref, delta, position) {
-    //     this.props.setProps({
-    //         width: ref.style.width,
-    //         height: ref.style.height,
-    //     })
-    // }
+    handleOnResizeStop(e, direction, ref, delta, position) {
+        this.props.setProps({
+            w: ref.style.width,
+            h: ref.style.height,
+        })
+    }
     
     render() {
         // const {id, label, setProps, value} = this.props;
@@ -31,19 +31,22 @@ export default class DragResize extends Component {
             <div id={this.props.id}>
             <Rnd
                 default={{
-                    x: 0,
-                    y: 0,
-                    width: 450,
-                    height: 300,
+                    x: 0, 
+                    y: 0, 
+                    width: this.props.w, 
+                    height: this.props.h,
                 }}
+                onDragStop = {this.handleOnDragStop}
+                onResizeStop = {this.handleOnResizeStop}
                 >
-                <div
-                    className="box"
-                    style={{ height: '100%', border: '5px solid rgba(0, 0, 0, 0.5)' }}
-                >
-                    <div>
-                        {this.props.children}
-                    </div>
+                <div 
+                    className="box" 
+                    style={{height: '100%' }}
+                    >
+                        <div style={{height: '100%', border: '1px solid rgba(0, 0, 0, 0.05)'}}>
+                            {this.props.children}
+                        </div>
+                    
                 </div>
             </Rnd>
             </div>
@@ -60,10 +63,10 @@ DragResize.propTypes = {
     // value: PropTypes.string,
     // setProps: PropTypes.func
     // id: PropTypes.string,
-    // x: PropTypes.number,
-    // y: PropTypes.number,
-    // width: PropTypes.number,
-    // height: PropTypes.number,
+    x: PropTypes.number,
+    y: PropTypes.number,
+    w: PropTypes.string,
+    h: PropTypes.string,
     // setProps: PropTypes.func,
     // onDragStop: PropTypes.func,
     // onResizeStop: PropTypes.func,
