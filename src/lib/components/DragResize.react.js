@@ -28,23 +28,30 @@ export default class DragResize extends Component {
         const {id, label, setProps, value} = this.props;
 
         return (
-            <div id={this.props.id}>
+            // <div id={this.props.id}>
                 <Rnd
-                    size={{ width: this.props.width,  height: this.props.height }}
-                    position={{ x: this.props.x, y: this.props.y }}
-                    onDragStop={(e, d) => { this.props.setProps({ x: d.x, y: d.y }) }}
-                    onResizeStop={(e, direction, ref, delta, position) => {
-                        this.props.setProps({
-                            width: ref.style.width,
-                            height: ref.style.height,
-                        });
-                    }}
+                    // size={{ width: this.props.width,  height: this.props.height }}
+                    // position={{ x: this.props.x, y: this.props.y }}
+                    // onDragStop={(e, d) => { this.props.setProps({ x: d.x, y: d.y }) }}
+                    // onResizeStop={(e, direction, ref, delta, position) => {
+                    //     this.props.setProps({
+                    //         width: ref.style.width,
+                    //         height: ref.style.height,
+                    //     });
+                    // }}
+                    default={{
+                        x: 0,
+                        y: 0,
+                        width: 320,
+                        height: 200,
+                      }}
                     >
-                    <div>
+                    {/* <div>
                         {this.props.children}
-                    </div>
+                    </div> */}
+                    Test Message
                 </Rnd>
-            </div>
+            // </div>
         );
     }
 }
