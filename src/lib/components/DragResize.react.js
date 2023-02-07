@@ -1,57 +1,50 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Rnd from 'react-rnd';
+import {Rnd} from 'react-rnd';
 
 export default class DragResize extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.onDragStop = this.onDragStop.bind(this);
-        this.onResizeStop = this.onResizeStop.bind(this);
-    }
-
-    onDragStop(e, d) { 
-        this.props.setProps({ 
-            x: d.x, 
-            y: d.y, 
-        }) 
+        // this.onDragStop = this.onDragStop.bind(this);
+        // this.onResizeStop = this.onResizeStop.bind(this);
     }
     
-    onResizeStop(e, direction, ref, delta, position) {
-        this.props.setProps({
-            width: ref.style.width,
-            height: ref.style.height,
-        })
-    }
+    // onDragStop(e, d) { 
+    //     this.props.setProps({ 
+    //         x: d.x, 
+    //         y: d.y, 
+    //     }) 
+    // }
+    
+    // onResizeStop(e, direction, ref, delta, position) {
+    //     this.props.setProps({
+    //         width: ref.style.width,
+    //         height: ref.style.height,
+    //     })
+    // }
     
     render() {
-        const {id, label, setProps, value} = this.props;
+        // const {id, label, setProps, value} = this.props;
 
         return (
             // <div id={this.props.id}>
+            <div>
                 <Rnd
-                    // size={{ width: this.props.width,  height: this.props.height }}
-                    // position={{ x: this.props.x, y: this.props.y }}
-                    // onDragStop={(e, d) => { this.props.setProps({ x: d.x, y: d.y }) }}
-                    // onResizeStop={(e, direction, ref, delta, position) => {
-                    //     this.props.setProps({
-                    //         width: ref.style.width,
-                    //         height: ref.style.height,
-                    //     });
-                    // }}
                     default={{
                         x: 0,
                         y: 0,
                         width: 320,
                         height: 200,
-                      }}
+                    }}
                     >
-                    {/* <div>
-                        {this.props.children}
-                    </div> */}
-                    Test Message
+                    <div>
+                        <figure className="image is-64x64">
+                            <img src="https://avatars1.githubusercontent.com/u/10220449?v=3&s=460" draggable="false" alt="github avatar" />
+                        </figure>
+                    </div>
                 </Rnd>
-            // </div>
+            </div>
         );
     }
 }
@@ -59,20 +52,20 @@ export default class DragResize extends Component {
 DragResize.defaultProps = {};
 
 DragResize.propTypes = {
-    // id: PropTypes.string,
+    id: PropTypes.string,
     // label: PropTypes.string.isRequired,
     // value: PropTypes.string,
     // setProps: PropTypes.func
-    id: PropTypes.string,
-    x: PropTypes.number,
-    y: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    setProps: PropTypes.func,
-    onDragStop: PropTypes.func,
-    onResizeStop: PropTypes.func,
-    size: PropTypes.object,
-    position: PropTypes.object,
-    dragGrid: PropTypes.object,
-    resizeGrid: PropTypes.object,
+    // id: PropTypes.string,
+    // x: PropTypes.number,
+    // y: PropTypes.number,
+    // width: PropTypes.number,
+    // height: PropTypes.number,
+    // setProps: PropTypes.func,
+    // onDragStop: PropTypes.func,
+    // onResizeStop: PropTypes.func,
+    // size: PropTypes.object,
+    // position: PropTypes.object,
+    // dragGrid: PropTypes.object,
+    // resizeGrid: PropTypes.object,
 };

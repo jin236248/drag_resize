@@ -24,7 +24,8 @@
   "author": "Jin Ch <jin236248@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "react-rnd": "^10.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
