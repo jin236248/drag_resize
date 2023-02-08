@@ -13,13 +13,20 @@ A DragResize component.
 Keyword arguments:
 - `children` (Dict; optional)
 - `id` (String; optional)
+- `bounds` (String; optional)
+- `className` (String; optional)
+- `disableDragging` (Bool; optional)
+- `dragGrid` (Array; optional)
+- `enableResizing` (Bool; optional)
 - `h` (String; optional)
+- `resizeGrid` (Array; optional)
+- `style` (Dict; optional)
 - `w` (String; optional)
 - `x` (Real; optional)
 - `y` (Real; optional)
 """
 function ''_dragresize(; kwargs...)
-        available_props = Symbol[:children, :id, :h, :w, :x, :y]
+        available_props = Symbol[:children, :id, :bounds, :className, :disableDragging, :dragGrid, :enableResizing, :h, :resizeGrid, :style, :w, :x, :y]
         wild_props = Symbol[]
         return Component("''_dragresize", "DragResize", "drag_resize", available_props, wild_props; kwargs...)
 end

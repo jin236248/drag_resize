@@ -25,30 +25,29 @@ export default class DragResize extends Component {
     }
     
     render() {
-        // const {id, label, setProps, value} = this.props;
-
         return (
             <div id={this.props.id}>
-            <Rnd
-                default={{
-                    x: 0, 
-                    y: 0, 
-                    width: this.props.w, 
-                    height: this.props.h,
-                }}
-                onDragStop = {this.handleOnDragStop}
-                onResizeStop = {this.handleOnResizeStop}
-                >
-                <div 
-                    className="box" 
-                    style={{height: '100%' }}
+                <Rnd
+                    default={{
+                        x: this.props.x, 
+                        y: this.props.y, 
+                        width: this.props.w, 
+                        height: this.props.h,
+                    }}
+                    onDragStop = {this.handleOnDragStop}
+                    onResizeStop = {this.handleOnResizeStop}
+                    disableDragging = {this.props.disableDragging}
+                    dragGrid = {this.props.dragGrid}
+                    enableResizing={this.props.enableResizing}
+                    resizeGrid = {this.props.resizeGrid}
+                    bounds={this.props.bounds}
+                    // style={this.props.style}
+                    className={this.props.className}
                     >
-                        <div style={{height: '100%', border: '1px solid rgba(0, 0, 0, 0.05)'}}>
-                            {this.props.children}
-                        </div>
-                    
-                </div>
-            </Rnd>
+                    <div style={{height: "100%"}}>
+                        {this.props.children}
+                    </div>
+                </Rnd>
             </div>
         );
     }
@@ -59,19 +58,15 @@ DragResize.defaultProps = {};
 DragResize.propTypes = {
     id: PropTypes.string,
     children: PropTypes.object,
-    // label: PropTypes.string.isRequired,
-    // value: PropTypes.string,
-    // setProps: PropTypes.func
-    // id: PropTypes.string,
     x: PropTypes.number,
     y: PropTypes.number,
     w: PropTypes.string,
     h: PropTypes.string,
-    // setProps: PropTypes.func,
-    // onDragStop: PropTypes.func,
-    // onResizeStop: PropTypes.func,
-    // size: PropTypes.object,
-    // position: PropTypes.object,
-    // dragGrid: PropTypes.object,
-    // resizeGrid: PropTypes.object,
+    disableDragging: PropTypes.bool,
+    dragGrid: PropTypes.array, // [1,1]
+    enableResizing: PropTypes.bool,
+    resizeGrid: PropTypes.array, // [1,1]
+    bounds: PropTypes.string, // parent, window
+    className: PropTypes.string, // square border border-0
+    // style: PropTypes.object,
 };

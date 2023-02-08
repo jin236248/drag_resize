@@ -10,7 +10,9 @@
 }
 
 \usage{
-''DragResize(children=NULL, id=NULL, h=NULL, w=NULL, x=NULL, y=NULL)
+''DragResize(children=NULL, id=NULL, bounds=NULL, className=NULL,
+disableDragging=NULL, dragGrid=NULL, enableResizing=NULL,
+h=NULL, resizeGrid=NULL, style=NULL, w=NULL, x=NULL, y=NULL)
 }
 
 \arguments{
@@ -18,7 +20,21 @@
 
 \item{id}{Character. }
 
+\item{bounds}{Character. }
+
+\item{className}{Character. }
+
+\item{disableDragging}{Logical. }
+
+\item{dragGrid}{Unnamed list. }
+
+\item{enableResizing}{Logical. }
+
 \item{h}{Character. }
+
+\item{resizeGrid}{Unnamed list. }
+
+\item{style}{Named list. }
 
 \item{w}{Character. }
 

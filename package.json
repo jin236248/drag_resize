@@ -1,6 +1,6 @@
 {
   "name": "drag_resize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "drag and resize dash objects",
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
   "author": "Jin Ch <jin236248@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "ramda": "^0.26.1",
+    "react-bootstrap": "^2.7.0",
     "react-rnd": "^10.4.1"
   },
   "devDependencies": {
