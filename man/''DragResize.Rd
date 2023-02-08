@@ -12,7 +12,7 @@
 \usage{
 ''DragResize(children=NULL, id=NULL, bounds=NULL, className=NULL,
 disableDragging=NULL, dragGrid=NULL, enableResizing=NULL,
-h=NULL, resizeGrid=NULL, style=NULL, w=NULL, x=NULL, y=NULL)
+h=NULL, resizeGrid=NULL, w=NULL, x=NULL, y=NULL)
 }
 
 \arguments{
@@ -33,8 +33,6 @@ h=NULL, resizeGrid=NULL, style=NULL, w=NULL, x=NULL, y=NULL)
 \item{h}{Character. }
 
 \item{resizeGrid}{Unnamed list. }
-
-\item{style}{Named list. }
 
 \item{w}{Character. }
 

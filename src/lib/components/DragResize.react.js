@@ -26,7 +26,7 @@ export default class DragResize extends Component {
     
     render() {
         return (
-            <div id={this.props.id}>
+            // <div id={this.props.id}>
                 <Rnd
                     default={{
                         x: this.props.x, 
@@ -48,7 +48,7 @@ export default class DragResize extends Component {
                         {this.props.children}
                     </div>
                 </Rnd>
-            </div>
+            // </div>
         );
     }
 }

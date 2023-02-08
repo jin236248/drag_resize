@@ -132,13 +132,6 @@
         },
         "required": false,
         "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": ""
       }
     }
   }

@@ -1,6 +1,6 @@
 Package: dragResize
 Title: drag and resize dash objects
-Version: 0.0.2
+Version: 0.0.3
 Description: drag and resize dash objects
 Depends: R (>= 3.0.2)
 Imports: 
